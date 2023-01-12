@@ -23,22 +23,21 @@
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="buttons.css" />
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="buttonHide" class="ButtonHide" style="display: block">
-      <div class="container">
-        <div id="continue-btn" class="continue-button">
-          <div class="btn-contain">
-            <button class="btn">Continue</button>
-            <div class="btn-particles"></div>
+    <div id="buttonHide" class="ButtonHide" style="display: block" style="background: none;">
+      <div class="container" style="background: none;">
+        <div id="continue-btn" class="continue-button" style="background: none;">
+          <div class="btn-contain" style="background: none;">
+            <button class="btn" style="background: none; box-shadow: none; width: 50vw; top: 38vh;"><x-sign>Walk IN</x-sign></button>
           </div>
           </div>
         </div>
       </div>
-      
     </div>
     <div id="bg-video-div" class="bg-video-wrap" style="display: none">
-      <video id="video" src="Untitled.mp4" loop muted autoplay style="display: none"></video>
+      <video id="video" src="ellora1.mp4" loop muted autoplay style="display: none"></video>
       <nav id="navbarId" class="navbar navbar-expand-custom navbar-mainbg" style="display: none">
         <a class="navbar-brand navbar-logo" href="#">
           <img style="width: 12%; padding: 0%;" src="logo52.png" alt="logo">
@@ -65,7 +64,7 @@
               >
             </li>
             <li class="nav-item ">
-              <a class="nav-link"  href="/event" target="_blank"
+              <a class="nav-link"  onclick="window.location.href='/event'" target="_blank"
                 >Events</a
               >
             </li>
@@ -108,11 +107,11 @@
             <img class="logo-image" src="main-logo.png" alt="logo">
             <h1 style="margin: 0% 2% 2% 2%; font-size: 3.5rem;" >Advitiya: essence of Ancient india</h1>
               <div class="schedule-button">
-                <button class="btn">Schedule</button>
+                <button class="btn" onclick="window.location.href='/commingsoon'">Schedule</button>
                 <div class="btn-particles"></div>
               </div>
               <div class="register-button">
-                <button class="btn">Register</button>
+                <button class="btn" onclick="window.location.href='/signup'">Register</button>
                 <div class="btn-particles"></div>
               </div>
             
@@ -123,7 +122,21 @@
             </div>
           </div>
           <div id="second-heading" style="display: none">
-             <h1>About Us!!!</h1>
+             <div class="contentaboutus">
+               <h1>About Us</h1>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel placeat iure at molestias omnis nulla ab dolore? Voluptates similique optio dolorum perspiciatis iure placeat dolores aperiam cum sed asperiores, corrupti delectus eius libero et quae maxime. Cumque, corrupti? Aliquid corporis quaerat saepe error libero eligendi sit rerum debitis non in.</p>
+             </div>
+             <div class="honeycomb">
+              <div class="gallery">
+                <img src="https://picsum.photos/id/1040/300/300" alt="a house on a mountain">
+                <img src="https://picsum.photos/id/106/300/300" alt="sime pink flowers">
+                <img src="https://picsum.photos/id/136/300/300" alt="big rocks with some trees">
+                <img src="https://picsum.photos/id/1039/300/300" alt="a waterfall, a lot of tree and a great view from the sky">
+                <img src="https://picsum.photos/id/110/300/300" alt="a cool landscape">
+                <img src="https://picsum.photos/id/1047/300/300" alt="inside a town between two big buildings">
+                <img src="https://picsum.photos/id/1057/300/300" alt="a great view of the sea above the mountain">
+              </div>
+             </div>
           </div>
           <!-- <h1 id="third-heading" >
             YO!!
@@ -132,14 +145,24 @@
             <div class="container">
               <div id="continue-btn-after" class="continue-button-after">
                 <div class="btn-contain">
-                  <button class="btn">Continue</button>
-                  <div class="btn-particles"></div>
+                  <button class="btn" style="background: none; box-shadow: none; width: 40vw;"><x-sign>Walk IN</x-sign></button>
+                  <!-- <div class="btn-particles"></div> -->
                 </div>
                 </div>
               </div>
             </div>
             <div id="bell-container" class="bell-container" style="display: none">
-              <i class="fa fa-bell" id="bell" aria-hidden="true"></i>
+              <div class = "notification">
+                <div class = "notBtn" href = "#">
+                  <div class = "number">0</div>
+                  <i class="fas fa-bell"></i>
+                    <div class = "box">
+                      <div>
+                        <p>Nothing here to display</p>
+                      </div>
+                   </div>
+                </div>
+              </div>
             </div>
             <div id="about-monument" class="about-monument" style="display: none">
               <img src="abc.png" alt="hello">
@@ -169,13 +192,9 @@
       </div>
       
     </div>
-    <audio
-      autoplay
-      controls
-      loop
-      src="melodyloops-preview-indian-temple-2m30s.mp3"
-    ></audio>
-    <button id="music-button" class="music-btn">
+    <!-- <audio src="melodyloops-preview-indian-temple-2m30s.mp3"></audio> -->
+    <embed src="melodyloops-preview-indian-temple-2m30s.mp3" loop="true" autostart="true" width="2" height="0">
+    <button id="music-button" class="music-btn" style="background-color: #d6a30d; width: 70px;">
       <i class="fas fa-volume-up"></i>
     </button>
     

@@ -1,72 +1,60 @@
-function openhodmodal(){
-    document.getElementById('hodm').style.display = 'block';
-}
-function openchairmanmodal (){
-    document.getElementById('chairmanm').style.display = 'block' ;
-}
-function openvicepresidentmodal (){
-    document.getElementById('vicepresidentm').style.display = 'block' ;
-}
-function opentreasurermodal (){
-    document.getElementById('treasurerm').style.display = 'block' ;
-}
-function openexecutivemodal (){
-    document.getElementById('executivem').style.display = 'block' ;
-}
-function opencoordinatormodal (){
-    document.getElementById('coordinatorm').style.display = 'block' ;
-}
-function openwebmodal (){
-    document.getElementById('webm').style.display = 'block' ;
-}
-function opendesignmodal (){
-    document.getElementById('designm').style.display = 'block' ;
-}
-function openpublicitymodal (){
-    document.getElementById('publicitym').style.display = 'block' ;
-}
-function openeventmodal (){
-    document.getElementById('eventm').style.display = 'block' ;
-}
-function opensponsmodal (){
-    document.getElementById('sponsm').style.display = 'block' ;
-}
-function openlogisticmodal (){
-    document.getElementById('logisticm').style.display = 'block' ;
-}
-function closehodmodal(){
-    document.getElementById('hodm').style.display = 'none';
-}
-function closechairmanmodal (){
-    document.getElementById('chairmanm').style.display = 'none' ;
-}
-function closevicepresidentmodal (){
-    document.getElementById('vicepresidentm').style.display = 'none' ;
-}
-function closetreasurermodal (){
-    document.getElementById('treasurerm').style.display = 'none' ;
-}
-function closeexecutivemodal (){
-    document.getElementById('executivem').style.display = 'none' ;
-}
-function closecoordinatormodal (){
-    document.getElementById('coordinatorm').style.display = 'none' ;
-}
-function closewebmodal (){
-    document.getElementById('webm').style.display = 'none' ;
-}
-function closedesignmodal (){
-    document.getElementById('designm').style.display = 'none' ;
-}
-function closepublicitymodal (){
-    document.getElementById('publicitym').style.display = 'none' ;
-}
-function closeeventmodal (){
-    document.getElementById('eventm').style.display = 'none' ;
-}
-function closesponsmodal (){
-    document.getElementById('sponsm').style.display = 'none' ;
-}
-function closelogisticmodal (){
-    document.getElementById('logisticm').style.display = 'none' ;
-}
+function test() {
+    var tabsNewAnim = $("#navbarSupportedContent");
+    var selectorNewAnim = $("#navbarSupportedContent").find("li").length;
+    var activeItemNewAnim = tabsNewAnim.find(".active");
+    var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+    var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+    var itemPosNewAnimTop = activeItemNewAnim.position();
+    var itemPosNewAnimLeft = activeItemNewAnim.position();
+    $(".hori-selector").css({
+      top: itemPosNewAnimTop.top + "px",
+      left: itemPosNewAnimLeft.left + "px",
+      height: activeWidthNewAnimHeight + "px",
+      width: activeWidthNewAnimWidth + "px",
+    });
+    $("#navbarSupportedContent").on("click", "li", function (e) {
+      $("#navbarSupportedContent ul li").removeClass("active");
+      $(this).addClass("active");
+      var activeWidthNewAnimHeight = $(this).innerHeight();
+      var activeWidthNewAnimWidth = $(this).innerWidth();
+      var itemPosNewAnimTop = $(this).position();
+      var itemPosNewAnimLeft = $(this).position();
+      $(".hori-selector").css({
+        top: itemPosNewAnimTop.top + "px",
+        left: itemPosNewAnimLeft.left + "px",
+        height: activeWidthNewAnimHeight + "px",
+        width: activeWidthNewAnimWidth + "px",
+      });
+    });
+  }
+  $(document).ready(function () {
+    setTimeout(function () {
+      test();
+    });
+  });
+  $(window).on("resize", function () {
+    setTimeout(function () {
+      test();
+    }, 500);
+  });
+  $(".navbar-toggler").click(function () {
+    $(".navbar-collapse").slideToggle(300);
+    setTimeout(function () {
+      test();
+    });
+  });
+  
+  // --------------add active class-on another-page move----------
+  jQuery(document).ready(function ($) {
+    // Get current path and find target link
+    var path = window.location.pathname.split("/").pop();
+  
+    // Account for home page with empty path
+    if (path == "") {
+      path = "index.html";
+    }
+  
+    var target = $('#navbarSupportedContent ul li a[href="' + path + '"]');
+    // Add active class to target link
+    target.parent().addClass("active");
+  });

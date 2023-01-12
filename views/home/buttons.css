@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Bad+Script|Gruppo|Kumar+One+Outline|League+Script|Londrina+Outline|Monoton|Sriracha|Yellowtail&amp;text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?+);
 .shape {
   position: absolute;
   width: 50px;
@@ -87,4 +88,46 @@
     left: 48%;
     bottom: 0%;
     font-family: "MedievalSharp", cursive;
+}
+
+x-sign {
+  font-size: 3rem;
+  --interval: 1s;
+  display: block;
+  text-shadow: 
+    0 0 10px var(--color1),
+    0 0 20px var(--color2),
+    0 0 40px var(--color3),
+    0 0 80px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;
+}
+
+
+x-sign {
+  color: lightyellow;
+  --color1: yellow;
+  --color2: black;
+  --color3: brown;
+  --color4: purple;
+  font-family: Bad Script;
+}
+@keyframes flicker {
+  50% {
+    font-size:4rem;
+    color: white;
+    filter: saturate(200%) hue-rotate(20deg);
+  }
+}
+
+@media(max-width:500px) {
+  x-sign{
+    font-size: 1.5rem;
+  }
+  @keyframes flicker{
+    50% {
+      font-size: 2rem;
+    }
+  }
 }
