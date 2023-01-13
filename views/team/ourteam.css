@@ -448,3 +448,28 @@ transform: translateY(0%);
     }
   }
 }
+
+.slide-trackpt{
+  animation: scrollpt 15s linear infinite;
+}
+
+@keyframes scrollpt{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(calc(-29vh*4));
+  }
+}
+.slide-trackpb{
+  animation: scrollpb 15s linear infinite;
+}
+
+@keyframes scrollpb{
+  0%{
+    transform: translateX(calc(-29vh*4));
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
